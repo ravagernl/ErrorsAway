@@ -1,4 +1,5 @@
 ## Interface: 50200
+## Version: 50200.1
 ## Title: ErrorsAway
 ## Author: Ravagernl
 ## SavedVariables: ErrorsAwayDB
