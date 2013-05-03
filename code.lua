@@ -1,6 +1,6 @@
 local addonName = ...
 
-local find, lower, wipe, prn = string.find, string.lower, table.wipe, print
+local select, find, lower, wipe, prn = select, string.find, string.lower, table.wipe, print
 
 local LISTENING = false
 
@@ -13,7 +13,6 @@ local function print(...)
     prn(printPrefix, ...)
 end
 
-local select = select
 local function add(...)
     local msg
     for i = 1, select('#', ...) do
