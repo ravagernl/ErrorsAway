@@ -1,0 +1,6 @@
+## Interface: 50200
+## Title: ErrorsAway
+## Author: Ravagernl
+## SavedVariables: ErrorsAwayDB
+## Notes: Filters Errors in the UIErrorsFrame. /errors prints menu.
+code.lua
