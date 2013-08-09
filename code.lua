@@ -118,6 +118,10 @@ local function slash(str)
         ErrorsAwayDB = defaults()
         db = ErrorsAwayDB
         print('Database was reset.')
+    elseif(str == 'clear') then
+        wipe(ErrorsAwayDB)
+        db = ErrorsAwayDB
+        print('Database was cleared.')
     elseif(str == 'list') then
         if next(db) then
             print('Listing database:')
@@ -140,6 +144,7 @@ local function slash(str)
         print('Added|cff95ff95', str, '|rto database.')
     else
         print(' Commands:')
+        prn('     |cff95ff95/'..lower(addonName)..' clear|r    Clears all the entries in th database.')
         prn('     |cff95ff95/'..lower(addonName)..' reset|r    Resets the database to default errors.')
         prn('     |cff95ff95/'..lower(addonName)..' list|r     Lists the entries in the database.')
         prn('     |cff95ff95/'..lower(addonName)..' listen|r   Listen to the errorsframe and add errors automatically.')
@@ -184,4 +189,9 @@ addon:SetScript('OnEvent', function(self, event, name)
     addSlash = nil
 
     UIErrorsFrame:SetScript('OnEvent', errorEvent)
+
+    -- Style font to be more readable.
+    UIErrorsFrame:SetFont(UIErrorsFrame:GetFont(), 18, 'THICKOUTLINE')
+    UIErrorsFrame:SetShadowColor(0, 0, 0, 0.2)
+    UIErrorsFrame:SetShadowOffset(0, 0)
 end)
